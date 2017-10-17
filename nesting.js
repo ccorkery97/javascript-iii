@@ -37,8 +37,17 @@ var employees = [{
 //  3. Return the updated employee array.
 
 // Code here
-
-
+var employeeUpdater = arr => {
+  arr.forEach((val,i,arr) => {
+    if (arr[i].firstName === 'Theo'){
+      arr.splice(i,1);
+    }
+    if (arr[i].firstName === 'Lorie'){
+      arr[i].department = 'HR';
+    }
+  })
+  return arr;
+}
 
 
 
@@ -56,7 +65,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
 
-
+var removeDuplicates = arr => {
+  for (var i = 5; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        arr.splice(j, 1);
+      }
+    }
+  }
+  return arr;
+};
 
 
 
@@ -84,8 +102,8 @@ var cat = {
 
 // Code here
 
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name; 
 
 
 
@@ -123,7 +141,9 @@ var myCar = {
 }
 
 // Code here
-
+var recordCleaner = arr => {
+  arr.forEach((obj) => obj.atFaultForAccident = false);
+}
 
 
 
@@ -143,6 +163,16 @@ var myCar = {
 
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
-
+var looper = arr => {
+  for (var i = 0; i < arr.length; i++){
+    for (var j = 0; j < arr.length; j++){
+      if (arr[j] % 2 === 0){
+        arr[j] = 'even';
+      }else{
+        arr[j] = 'odd';
+      }
+    }
+  }  
+}
 
 

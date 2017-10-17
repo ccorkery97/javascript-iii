@@ -33,6 +33,11 @@
 
 function showValues( obj ) {
   // CODE HERE
+  var str = '';
+  for (var key in obj){
+    str += obj[key];
+  }
+  return str;
 }
 
 
@@ -42,7 +47,14 @@ function showValues( obj ) {
 // Write a function called greaterThan10 that takes in an object. Write a for in loop that loops over the object and changes any value that is great than 10 to 0. Return the updated object.
 
 // CODE HERE
-
+var greaterThan10 = obj => {
+  for (var key in obj){
+    if (obj[key] > 10){
+      obj[key] = 0;
+    }
+  }
+  return obj;
+}
 
 
 // ========================
@@ -52,7 +64,12 @@ function showValues( obj ) {
 
 // CODE HERE
 
-
+var double = obj => {
+  for (var key in obj){
+    obj[key] = obj[key] * 2;
+  }
+  return obj;
+}
 
 // ========================
 
@@ -61,7 +78,15 @@ function showValues( obj ) {
 
 // CODE HERE
 
-
+var secrets = obj => {
+  var str = '';
+  for (var key in obj){
+    if (String(key).substring(0,2) === 'sh'){
+      str += obj[key];
+    } 
+  }
+  return str;
+};
 // ========================
 
 
@@ -85,7 +110,14 @@ function showValues( obj ) {
 // Write a function called removePassword that takes in an object. Delete the property password and return the object.
 
 // CODE HERE
-
+var removePassword = obj => {
+  for (var key in obj){
+    if (String(key) === 'password'){
+      delete obj[key];
+    }
+  }
+  return obj;
+};
 
 
 // ========================
@@ -101,7 +133,11 @@ var deleteTheBigNumbers = {
 }
 
 // CODE HERE
-
+for (var key in deleteTheBigNumbers){
+  if (deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 // ========================
 
@@ -110,7 +146,14 @@ var deleteTheBigNumbers = {
 
 // CODE HERE
 
-
+var startsWithK = obj => {
+  for (var key in obj){
+    if (String(key).substring(0,1) === 'k'){
+      delete obj[key];
+    }
+  }
+  return obj;
+};
 
 // ========================
 
@@ -119,3 +162,11 @@ var deleteTheBigNumbers = {
 // (hint: the method includes() may be of use...)
 
 // CODE HERE
+var hiddenTreasure = obj => {
+  for (var key in obj){
+    if (obj[key].search('treasure') < 0){
+      delete obj[key];
+    }
+  }
+  return obj;
+};

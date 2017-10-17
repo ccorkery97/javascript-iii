@@ -12,7 +12,7 @@ var carDetails = {
 }
 
 // CODE HERE
-
+var {color,make,model,year} = carDetails;
 
 // ========================
 
@@ -21,9 +21,9 @@ var carDetails = {
 
 function greeting( obj ) {
   // CODE HERE
-  
+  var {title,firstName,lastName} = obj;
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
-}
+};
 
 
 // ========================
@@ -32,7 +32,10 @@ function greeting( obj ) {
 // Write a function called totalPopulation that will take in an object. That object will have 4 properties named utah, california, texas and arizona. The property values will be numbers. Use object destructuring to save the property values to new variables. Sum up the values and return the total number.
 
   // CODE HERE
-
+  var totalPopulation = obj => {
+    var {utah,california,texas,arizona} = obj;
+    return utah + california + texas + arizona;
+  };
 
 // ========================
 
@@ -41,7 +44,12 @@ function greeting( obj ) {
 
   // CODE HERE
 
-
+  var ingredients = obj => {
+    var {carb,fat,protein} = obj;
+    var foodArray = [];
+    foodArray.push(carb,fat,protein);
+    return foodArray;
+  }
 // ========================
 
 
@@ -54,7 +62,17 @@ function greeting( obj ) {
 // Write a function called largeNumbers that will take a destructured object as it's parameter. The object properties will be named first, second, and third and their values will be numbers. Find the smallest number of the three and return that number.
 
   // CODE HERE
-
+  var largeNumbers = ({first,second,third}) => {
+    if (first > second || first > third){
+      if (second > third){
+        return third;
+      }else{
+        return second;
+      }
+    }else{
+      return first;
+    }
+  };
 
 // ========================
 
@@ -62,3 +80,14 @@ function greeting( obj ) {
 // Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
 
   // CODE HERE
+  var numberGroups = ({a,b,c}) => {
+    if (a.length < b.length || a.length < c.length){
+      if (b.length < c.length){
+        return c;
+      }else{
+        return b;
+      }
+    }else{
+      return a;
+    }
+  };
